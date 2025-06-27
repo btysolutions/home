@@ -1564,63 +1564,51 @@ document.addEventListener('DOMContentLoaded', function() {
 });
     </script>
 
-<!-- Botão Flutuante do WhatsApp -->
-<a href="https://wa.me/14847259225?text=Hello%20BTY%20Solutions%21%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20your%20%20services.%20Could%20you%20please%20assist%20me%3F"
-
-   class="whatsapp-float" 
-   target="_blank"
-   aria-label="Chat no WhatsApp">
-   <i class="fab fa-whatsapp"></i>
-</a>
+<div class="whatsapp-container">
+  <a id="whatsappBtn" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
 
 <style>
-/* Estilos do Botão do WhatsApp */
-.whatsapp-float {
+  .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 25px;
+    right: 25px;
     width: 60px;
     height: 60px;
-    background-color: #25D366;
+    background: #25D366;
     color: white;
     border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-}
+    font-size: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: all 0.3s;
+  }
 
-.whatsapp-float:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Efeito de pulsação (opcional) */
-@keyframes pulse {
+  @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
-}
-
-.whatsapp-float {
-    animation: pulse 2s infinite;
-}
-
-/* Versão Mobile */
-@media (max-width: 768px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
-        bottom: 20px;
-        right: 20px;
-    }
-}
+  }
 </style>
+
+<script>
+document.getElementById('whatsappBtn').addEventListener('click', function() {
+  const phone = '14847259225';
+  const text = encodeURIComponent("Hello BTY Solutions! I visited you website and would like more information about your services. Could you please assist me?");
+  
+  if (/Android|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = `https://wa.me/${phone}?text=${text}`;
+  } else {
+    window.open(`https://web.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+  }
+});
+</script>
 </body>
 </html>
