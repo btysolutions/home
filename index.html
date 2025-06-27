@@ -606,7 +606,7 @@
             resize: vertical;
         }
         
-        /* Testimonials */
+               /* Testimonials Section */
         .testimonials {
             background-color: white;
         }
@@ -614,6 +614,20 @@
         .testimonials-container {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px; /* Altura mínima para evitar saltos */
+        }
+        
+        .testimonials-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
         }
         
         .testimonial-card {
@@ -621,7 +635,6 @@
             border-radius: 10px;
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            margin: 20px;
             position: relative;
         }
         
@@ -676,6 +689,53 @@
             margin: 0;
             color: var(--secondary);
             font-size: 0.9rem;
+        }
+        
+        /* Testimonial Navigation */
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+        
+        .testimonial-nav button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-nav button:hover {
+            background: #c77a1f;
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background: var(--secondary);
+            transform: scale(1.2);
         }
         
         /* CTA Section */
@@ -1331,7 +1391,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+       <!-- Testimonials Section -->
     <section class="testimonials section-padding">
         <div class="container">
             <div class="section-title">
@@ -1340,16 +1400,175 @@
             </div>
             
             <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"BTY Solutions transformed our outdated kitchen into a modern masterpiece. Their attention to detail and professionalism exceeded our expectations. We couldn't be happier with the results!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-img">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
+                <div class="testimonials-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"BTY Solutions completely transformed our house. Diego managed every detail with professionalism and care. From drywall to finish work, everything was flawless. It feels like a brand-new home!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Jennifer M.</h4>
+                                        <p>Orlando, FL</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>Kitchen Renovation Project</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"I couldn't be happier with our new bathroom. Diego and his team were punctual, respectful, and extremely detail-oriented. The tiling and fixtures look amazing. Highly recommend!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Mark T.</h4>
+                                        <p>Tampa, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"We hired BTY Solutions to install custom kitchen cabinets, and the result exceeded our expectations. Everything is perfectly leveled, smooth, and solid. Diego is a true craftsman."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Samantha D.</h4>
+                                        <p>Fort Lauderdale, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"We had all the floors in our house redone with luxury vinyl planks. Diego's team worked fast, clean, and the finish is absolutely beautiful. Our house looks bigger and brighter!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Lucas H.</h4>
+                                        <p>Miami, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Our old deck was falling apart. BTY Solutions rebuilt it from scratch and it's now the favorite part of our home. Great workmanship, fair pricing, and timely execution."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Rachel P.</h4>
+                                        <p>Jacksonville, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The trim work BTY Solutions did throughout our home gave it a completely upgraded feel. Baseboards, crown molding, and window casings are all precise and elegant. Couldn't ask for more."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Mike B.</h4>
+                                        <p>West Palm Beach, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Diego did all the tile work in our kitchen backsplash and master shower - and it looks absolutely perfect. Clean lines, tight grout, and a modern finish. Five stars!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Taylor S.</h4>
+                                        <p>Sarasota, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 8 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Diego built us a custom built-in entertainment wall and some floating shelves. The craftsmanship is top-tier. He brought our ideas to life and then some!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Emma R.</h4>
+                                        <p>Naples, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 9 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"We wanted to modernize our outdated 90s interior. Diego handled flooring, paint, lighting, and new trims - and now the place feels like a high-end property. Professional and trustworthy."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Anthony J.</h4>
+                                        <p>Cape Coral, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 10 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"It's rare to find a contractor that delivers speed, cleanliness, and quality - but BTY Solutions nailed all three. Diego made our renovation stress-free. Honest pricing and top-tier results."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Nina W.</h4>
+                                        <p>Clearwater, FL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="testimonial-nav">
+                    <button id="testimonialPrev" class="testimonial-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="testimonialNext" class="testimonial-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Dots navigation -->
+                <div class="testimonial-dots" id="testimonialDots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
 
                             </div>
                         </div>
@@ -1609,6 +1828,78 @@ document.getElementById('whatsappBtn').addEventListener('click', function() {
     window.open(`https://web.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
   }
 });
+
+// Testimonials Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.testimonials-slider');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const prevBtn = document.getElementById('testimonialPrev');
+            const nextBtn = document.getElementById('testimonialNext');
+            const dotsContainer = document.getElementById('testimonialDots');
+            
+            let currentSlide = 0;
+            const slideCount = slides.length;
+            
+            // Create dots for navigation
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('testimonial-dot');
+                dot.dataset.slide = i;
+                dotsContainer.appendChild(dot);
+            }
+            
+            const dots = document.querySelectorAll('.testimonial-dot');
+            
+            // Initialize first dot as active
+            if (dots.length > 0) {
+                dots[0].classList.add('active');
+            }
+            
+            // Function to go to a specific slide
+            function goToSlide(slideIndex) {
+                slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+                currentSlide = slideIndex;
+                
+                // Update active dot
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[slideIndex].classList.add('active');
+            }
+            
+            // Next slide
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % slideCount;
+                goToSlide(nextIndex);
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                const prevIndex = (currentSlide - 1 + slideCount) % slideCount;
+                goToSlide(prevIndex);
+            }
+            
+            // Event listeners
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', prevSlide);
+                nextBtn.addEventListener('click', nextSlide);
+            }
+            
+            // Dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.dataset.slide);
+                    goToSlide(slideIndex);
+                });
+            });
+            
+            // Auto-advance every 5 seconds
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // Pause auto-advancement when user interacts with slider
+            slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            slider.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
 </script>
 </body>
 </html>
