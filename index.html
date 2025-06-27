@@ -6,6 +6,7 @@
     <title>BTY Solutions | Complete Construction and Renovation Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+	
     <style>
         /* Reset e estilos básicos */
         * {
@@ -1562,5 +1563,65 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
     </script>
+
+<!-- Botão Flutuante do WhatsApp -->
+<a href="https://wa.me/14847259225" 
+text=Hello%20BTY%20Solutions%21%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20your%20construction%20services.%20Could%20you%20please%20assist%20me%3F" 
+
+   class="whatsapp-float" 
+   target="_blank"
+   aria-label="Chat no WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+</a>
+
+<style>
+/* Estilos do Botão do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de pulsação (opcional) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.whatsapp-float {
+    animation: pulse 2s infinite;
+}
+
+/* Versão Mobile */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+</style>
 </body>
 </html>
