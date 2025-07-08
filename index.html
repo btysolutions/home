@@ -23,6 +23,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 	
     <style>
+ /* Estilo do botão de telefone flutuante */
+    .float-phone {
+        position: fixed;
+        bottom: 110px; /* Ajuste esta distância conforme necessário */
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        animation: phone-pulse 2s infinite;
+    }
+    
+    .float-phone:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    
+    .float-phone i {
+        font-size: 28px;
+        color: white;
+    }
+    
+    /* Tooltip opcional */
+    .float-phone::after {
+        content: "Call or text message us";
+        position: absolute;
+        right: 70px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        white-space: nowrap;
+    }
+    
+    .float-phone:hover::after {
+        opacity: 1;
+    }
+    
+    /* Animação de pulsar */
+    @keyframes phone-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+    }
         /* Reset e estilos básicos */
         * {
             margin: 0;
@@ -1085,6 +1140,11 @@
         </div>
     </div>
 
+<!-- Botão de Telefone Flutuante -->
+<div class="float-phone" onclick="contatarTelefone()">
+    <i class="fas fa-phone"></i>
+</div>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -1915,6 +1975,23 @@ document.getElementById('whatsappBtn').addEventListener('click', function() {
                 slideInterval = setInterval(nextSlide, 5000);
             });
         });
+</script>
+
+<script>
+    // Função para o botão de telefone
+    function contatarTelefone() {
+        // Seu número formatado corretamente
+        const numero = "+14847259225";
+        
+        // Verifica se é um dispositivo móvel
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Dispositivo móvel - abre discagem ou app de mensagens
+            window.location.href = `tel:${numero}`;
+        } else {
+            // Desktop - mostra o número para o usuário copiar
+            alert(`To contact us, please call or send a text message to:\n${numero}`);
+        }
+    }
 </script>
 </body>
 </html>
